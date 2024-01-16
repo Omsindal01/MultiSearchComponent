@@ -1,3 +1,27 @@
+
+
+<img width="960" alt="zepto_assign6" src="https://github.com/Omsindal01/MultiSearchComponent/assets/86191343/8a707e77-7a14-4846-8dc5-75e07b827eb9">
+
+
+
+<img width="960" alt="zepto_assign1" src="https://github.com/Omsindal01/MultiSearchComponent/assets/86191343/677362ea-528b-443f-b6a6-7480b32e8668">
+
+
+
+<img width="960" alt="zepto_assign2" src="https://github.com/Omsindal01/MultiSearchComponent/assets/86191343/30c1d0de-1835-4285-a988-3d512d5faa5a">
+
+
+
+<img width="960" alt="zepto_assign3" src="https://github.com/Omsindal01/MultiSearchComponent/assets/86191343/e13a8f5f-9e50-4b5e-ae7f-b8101fce02d4">
+
+
+<img width="960" alt="zepto_assign4" src="https://github.com/Omsindal01/MultiSearchComponent/assets/86191343/ca03e6f2-8a0e-4d9a-b377-cf6943a063c3">
+
+
+<img width="960" alt="zepto_assign5" src="https://github.com/Omsindal01/MultiSearchComponent/assets/86191343/f5f4c9c6-4a85-4f00-9c2a-fa9a53d45367">
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
