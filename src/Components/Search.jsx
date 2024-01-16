@@ -7,10 +7,10 @@ import profile4 from "../images/profile2.jpg";
 
 const Search = () => {
   const [searchText, setSearchText] = useState("");
-  const [selectedItems, setSelectedItems] = useState([]);
-  const [matchingItems, setMatchingItems] = useState([]);
+  const [selectedUsers, setSelectedUsers] = useState([]);
+  const [matchingUsers, setMatchingUsers] = useState([]);
   const [isInputFocused, setIsInputFocused] = useState(false);
-  const [allItems, setAllItems] = useState([
+  const [allUsers, setAllUsers] = useState([
     {
       id: 1,
       profilePicture: profile1,
@@ -41,60 +41,60 @@ const Search = () => {
     const text = e.target.value;
     setSearchText(text);
 
-    // Filter items based on the input and exclude selected items
-    const filteredItems = allItems.filter(
-      (item) =>
-        item.name.toLowerCase().includes(text.toLowerCase()) &&
-        !selectedItems.includes(item)
+    // Filter users based on the input and exclude selected users
+    const filteredUsers = allUsers.filter(
+      (user) =>
+        user.name.toLowerCase().includes(text.toLowerCase()) &&
+        !selectedUsers.includes(user)
     );
 
-    // Show all items when the input is focused
-    setMatchingItems(isInputFocused ? allItems : filteredItems);
+    // Show all users only when the input is focused and text is empty
+    setMatchingUsers(isInputFocused && text === "" ? allUsers : filteredUsers);
   };
 
   const handleInputFocus = () => {
     setIsInputFocused(true);
-    setMatchingItems(allItems); // Show all items when the input is focused
+    setMatchingUsers(allUsers); // Show all users when the input is focused
   };
 
   const handleInputBlur = () => {
     setIsInputFocused(false);
   };
 
-  const handleItemClick = (item) => {
-    // Remove the selected item from the all items list
-    const updatedItems = allItems.filter((updatedItem) => updatedItem !== item);
-    setAllItems(updatedItems);
-    setMatchingItems(updatedItems);
+  const handleUserClick = (user) => {
+    // Remove the selected user from the all users list
+    const updatedUsers = allUsers.filter((updatedUser) => updatedUser !== user);
+    setAllUsers(updatedUsers);
+    setMatchingUsers(updatedUsers);
 
-    // Add the selected item to the list
-    setSelectedItems((selectedItems) => [...selectedItems, item]);
+    // Add the selected user to the list
+    setSelectedUsers((selectedUsers) => [...selectedUsers, user]);
 
     // Clear the search text
     setSearchText("");
   };
 
-  const handleChipRemove = (item) => {
-    // Remove the selected item from the list
-    const updatedItems = selectedItems.filter(
-      (selectedItem) => selectedItem.id !== item.id
+  const handleChipRemove = (user) => {
+    // Remove the selected user from the list
+    const updatedUsers = selectedUsers.filter(
+      (selectedUser) => selectedUser.id !== user.id
     );
-    setSelectedItems([...updatedItems]);
+    setSelectedUsers([...updatedUsers]);
 
-    // Add the removed item back to the all items list
-    setAllItems((prevItems) => [...prevItems, item]);
+    // Add the removed user back to the all users list
+    setAllUsers((prevUsers) => [...prevUsers, user]);
 
-    // Update the matching items based on the new input
-    setMatchingItems((prevItems) => [...prevItems, item]);
+    // Update the matching users based on the new input
+    setMatchingUsers((prevUsers) => [...prevUsers, user]);
   };
 
   return (
     <div className="container">
-      {selectedItems.map((item) => (
-        <div key={item.id} className="selected-item">
-          <img src={item.profilePicture} alt={item.name} />
-          <span className="chip-name">{item.name}</span>
-          <span className="remove-chip" onClick={() => handleChipRemove(item)}>
+      {selectedUsers.map((user) => (
+        <div key={user.id} className="selected-user">
+          <img src={user.profilePicture} alt={user.name} />
+          <span className="chip-name">{user.name}</span>
+          <span className="remove-chip" onClick={() => handleChipRemove(user)}>
             &times;
           </span>
         </div>
@@ -109,16 +109,16 @@ const Search = () => {
           placeholder="Add new user..."
           className="input-field"
         />
-        {matchingItems.length > 0 && (
+        {matchingUsers.length > 0 && (
           <ul className="suggestions-list">
-            {matchingItems.map((item) => (
+            {matchingUsers.map((user) => (
               <li
-                key={item.id}
-                className="suggestions-list-item"
-                onClick={() => handleItemClick(item)}
+                key={user.id}
+                className="suggestions-list-user"
+                onClick={() => handleUserClick(user)}
               >
-                <img src={item.profilePicture} alt={item.name} />
-                {item.name} - {item.email}
+                <img src={user.profilePicture} alt={user.name} />
+                {user.name} - {user.email}
               </li>
             ))}
           </ul>

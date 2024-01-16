@@ -4,7 +4,7 @@
   border-bottom: 3px solid blue;
 }
 
-.selected-item {
+.selected-user {
   margin: 4px;
   padding: 4px;
   background: #e0e0e0;
@@ -25,7 +25,7 @@
   transform: scale(1.5);
 }
 
-.selected-item img {
+.selected-user img {
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -59,20 +59,20 @@
   top: 100%;
 }
 
-.suggestions-list-item {
+.suggestions-list-user {
   display: flex;
   padding: 8px;
   cursor: pointer;
   align-items: center;
 }
 
-.suggestions-list-item img {
+.suggestions-list-user img {
   width: 24px;
   height: 24px;
   border-radius: 50%;
   margin-right: 4px;
 }
 
-.suggestions-list-item:hover {
+.suggestions-list-user:hover {
   background-color: #f0f0f0;
 }
